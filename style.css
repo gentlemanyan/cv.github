@@ -229,7 +229,8 @@ a.link-button {
     font-weight: 700;
     margin-right: 15px;
     padding: 10px 20px 10px;
-    box-shadow: none
+    box-shadow: none;
+    outline: none;
 }
 
 a.link-button:hover {
@@ -417,7 +418,6 @@ nav .nav-open-btn li {
 
 .personal-info .profile-pic {
     border-radius: 100%;
-    width: 230px
 }
 
 .personal-info .connections {
@@ -445,6 +445,7 @@ nav .nav-open-btn li {
 }
 
 .content {
+    display: none;
     margin: 0 auto;
     max-width: 700px;
     padding: 20px 40px
@@ -1235,4 +1236,18 @@ code {
     }
 }
 
+.tab-active { 
+    display: block;
+}
+.tab-panel {
+    min-height: 700px;
+}
 
+.personal-info > ul {
+    padding-left: 0;
+}
+
+.personal-info > ul > li {
+    color: #fff;
+    list-style: none;
+}

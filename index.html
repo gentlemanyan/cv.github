@@ -10,7 +10,7 @@
   <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
 
   <!-- SEO meta tags -->
-  <meta name="description" content="web 前端 简历" />
+  <meta name="description" content="web 前端 简历"/>
   <meta name="twitter:card" content="summary">
   <meta property="og:title" content="zhangyan" />
   <!-- <meta name="og:description" content="Blog posts about programming, mostly JS and frontend, but a few other topics as well."
@@ -23,154 +23,163 @@
   <link rel="stylesheet" href="./style.css" media="all"> </link>
   <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Source+Code+Pro" rel="stylesheet" type="text/css"></link>
   <link href="./highlight.css" rel="stylesheet" media="all" />
-  <script src="//cdn.optimizely.com/js/4606022905.js"></script>
   <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 </head>
+<script>
+  $(function() {
+    var $workInfo = $('#workInfo');
+    if ( $workInfo.hasClass('tab-active') ) {
+       $workInfo.parent().css('background', '#FFF')
+    }
+    else {
+        $workInfo.parent().css('background', '#b8335c');
+    }
 
+    $('.nav-item > a').on('click', function( event ){
+      if ( !$(this).hasClass('tab-active') ) {
+        $('.nav-item > a').removeClass('active');
+        $(this).addClass('active');
+
+        $('.content').removeClass('tab-active');
+        var id = $(this).attr('data-tab');
+        $(id).addClass('tab-active');
+
+        if ( id == '#workInfo' ) {
+          $workInfo.parent().css('background', '#FFF');
+        }
+        else {
+          $workInfo.parent().css('background', '#b8335c');
+        }
+      }
+    })
+  })
+</script>
 <body class="resume">
   <nav>
     <ul class='nav-display'>
-      <li>
-        <a href="/" class="link-button active">个人信息</a>
+      <li class="nav-item">
+        <a href="javascript:void(0)" class="link-button active" data-tab="#personInfo">个人信息</a>
       </li>
-      <li>
-        <a href="/workInfo/" class="link-button">工作学习经历</a>
+      <li class="nav-item">
+        <a href="javascript:void(0)" class="link-button" data-tab="#workInfo">工作经历</a>
       </li>
-      <!--<li>
-      <a href="/resume/" class="link-button active">Resume</a>
-    </li>
-    <li>
-      <a href="/contact-me/" class="link-button">Contact</a>
-    </li>
-    <li>
-      <a href="/resources/" class="link-button">Resources</a>
-    </li>
-    <li>
-      <a href="/blog/" class="link-button">Blog</a>
-    </li>-->
     </ul>
   </nav>
-  <div class="content">
-    <div class='personal-details'>
-      <h1>张言个人简历</h1>
-      <p><a href="http://github.com">gentman.com</a></p>
+  <div class="tab-panel">
+    <div id="workInfo" class="content">
+      <div class='personal-details'>
+        <h1>张言个人简历</h1>
+        <p><a href="http://github.com">gentman.com</a></p>
+      </div>
+      <section class='category overview'>
+        <div class='two-part-title'>
+          <h2 class='category-title'>概述</h2>
+          <a class='download-link link-button' download='' href='file:///Users/zhangyan/个人简历.pdf'>下载简历</a>
+        </div>
+        <div class='item'>
+          <p>
+            我是一名前端开发工程师，之前就职于金证科技，工作中主要设计前端页面，编写前端组件和后台代码。本人热爱前端技术，
+            熟悉AngularJs(1.x)框架，了解其源码，熟悉前端工程化，组件化，有着扎实的javascript基础，能独立编写CSS。
+            了解angular(4.x),能够独立完成web前端的开发任务。有强大的自我驱动能力迅速学习新技术，对代码规范有着轻微的强迫症。
+          </p>
+        </div>
+      </section>
+      <section class='category experience'>
+        <h2 class='category-title'>工作经历</h2> 
+        <div class='item'>
+          <div class='target-border'>
+            <div class='target-dot'></div>
+          </div>
+          <div class='titles'>
+            <h3 class='item-company-title'> 资产管理系统 (金证股份 - 银行事业部)</h3>
+            <span class='item-personal-title'> 开发工程师 </span>
+          </div>
+          <div class='item-date'>2016年9月 - 2017年4月</div>
+          <p class='item-key-tech'>所用技术：Jquery, AngularJs, Node.js, Express, Oracle</p>
+          <ul class='item-personal-details'>
+            <li>独立负责前端设计与编码，编写前端组件。</li>
+            <li>设计后台的业务模块，与银行系统，其他金融系统对接接口。</li>
+            <li>部署应用，保证产品顺利上线运行。</li>
+          </ul>
+        </div>
+        <div class='item'>
+          <div class='target-border'>
+            <div class='target-dot'></div>
+          </div>
+          <div class='titles'>
+            <h3 class='item-company-title'>积存金系统 (金证股份 - 银行事业部)</h3>
+            <span class='item-personal-title'>开发工程师</span>
+          </div>
+          <div class='item-date'>2017年4月 - 2017年5月</div>
+          <p class='item-key-tech'>
+            所用技术：Jquery , AngularJs , Node.js , Express，Oracle
+          </p>
+          <ul class='item-personal-details'>
+            <li>参与系统数据库设计，编写需求文档。</li>
+            <li>完成前端新功能的页面设计，AngularJs组件的开发。</li>
+          </ul>
+        </div>
+        <div class='item'>
+          <div class='target-border'>
+            <div class='target-dot'></div>
+          </div>
+          <div class='titles'>
+            <h3 class='item-company-title'>基金代销系统(金证股份 - 银行事业部)</h3>
+            <span class='item-personal-title'>开发工程师</span>
+          </div>
+          <div class='item-date'>2017年8月 - 2017年10月</div>
+          <p class='item-key-tech'>所用技术：Jquery, AngularJs, Node.js, Express, Oracle</p>
+          <ul class='item-personal-details'>
+            <li>设计系统工作流，设计工作流界面和数据库表</li>
+            <li>独立负责华商银行的基金代销系统的所有新功能模块的开发，并顺利上线。</li>
+          </ul>
+        </div>
+        <div class='page-break'></div>
+      </section>
+      <section class='category education'>
+        <h2 class='category-title'>教育</h2>
+        <div class='item'>
+          <div class='target-border'>
+            <div class='target-dot'></div>
+          </div>
+          <div class='titles wrap'>
+            <h3 class='item-company-title'>本科教育经历</h3>
+            <span class='item-personal-title'>桂林电子科技大学</span>
+          </div>
+          <div class='item-date'>2012年9月 - 2016年7月</div>
+          <ul class='item-personal-details'>
+            <li>数字媒体技术专业</li>
+          </ul>
+        </div>
+      </section>
+      <section class='category community'>
+        <h2 class='category-title'>个人实践</h2>
+        <div class='item'>
+          <div class='target-border'>
+            <div class='target-dot'></div>
+          </div>
+          <div class='item-date'>2015年8月 - 至今</div>
+          <ul class='item-personal-details'>
+            <li>用AngularJs，Node.js，Express，Mogodb独立构建过小型网站</li>
+            <li>目前正在用Angular4，Webpack，Node.js，Express实现网易云音乐的web端</li>
+          </ul>
+        </div>
+      </section>
     </div>
-    <section class='category overview'>
-      <div class='two-part-title'>
-        <h2 class='category-title'>概述</h2>
-        <a class='download-link link-button' download='' href='file:///Users/zhangyan/个人简历.pdf'>下载简历</a>
-      </div>
-      <div class='item'>
-        <p>
-          我是一名前端开发工程师，之前就职于金证科技，工作中主要设计前端页面，编写前端组件和后台代码。本人热爱前端技术，
-          熟悉AngularJs(1.x)框架，了解其源码，熟悉前端工程化，组件化，有着扎实的javascript基础，能独立编写CSS。
-          了解angular(4.x),能够独立完成web前端的开发任务。有强大的自我驱动能力迅速学习新技术，对代码规范有着轻微的强迫症。
-        </p>
-      </div>
-    </section>
-    <section class='category experience'>
-      <h2 class='category-title'>工作经历</h2> 
-      <div class='item'>
-        <div class='target-border'>
-          <div class='target-dot'></div>
+    <div id="personInfo" class="content tab-active">
+      <div class="personal-info">
+          <div class="photo">
+            <img class="profile-pic" src="./IMG_0398.JPG"  alt="avatar">
+          </div>
+          <ul>
+            <li><h4>姓名：张言</h4></li>
+            <li><h4>工作年限：2年</h4></li>
+            <li><h4>联系方式：18970518570</h4></li>
+            <li><h4>邮箱：651193558@qq.com</h4></li>
+          </ul>
         </div>
-        <div class='titles'>
-          <h3 class='item-company-title'> 资产管理系统 (金证股份 - 银行事业部)</h3>
-          <span class='item-personal-title'> 开发工程师 </span>
-        </div>
-        <div class='item-date'>2016年9月 - 2017年4月</div>
-        <p class='item-key-tech'>所用技术：Jquery, AngularJs, Node.js, Express, Oracle</p>
-        <ul class='item-personal-details'>
-          <li>独立负责前端设计与编码，编写前端组件。</li>
-          <li>设计后台的业务模块，与银行系统，其他金融系统对接接口。</li>
-          <li>部署应用，保证产品顺利上线运行。</li>
-        </ul>
-      </div>
-      <div class='item'>
-        <div class='target-border'>
-          <div class='target-dot'></div>
-        </div>
-        <div class='titles'>
-          <h3 class='item-company-title'>积存金系统 (金证股份 - 银行事业部)</h3>
-          <span class='item-personal-title'>开发工程师</span>
-        </div>
-        <div class='item-date'>2017年4月 - 2017年5月</div>
-        <p class='item-key-tech'>
-          所用技术：Jquery , AngularJs , Node.js , Express，Oracle
-        </p>
-        <ul class='item-personal-details'>
-          <li>参与系统数据库设计，编写需求文档。</li>
-          <li>完成前端新功能的页面设计，AngularJs组件的开发。</li>
-        </ul>
-      </div>
-      <div class='item'>
-        <div class='target-border'>
-          <div class='target-dot'></div>
-        </div>
-        <div class='titles'>
-          <h3 class='item-company-title'>基金代销系统(金证股份 - 银行事业部)</h3>
-          <span class='item-personal-title'>开发工程师</span>
-        </div>
-        <div class='item-date'>2017年8月 - 2017年10月</div>
-        <p class='item-key-tech'>所用技术：Jquery, AngularJs, Node.js, Express, Oracle</p>
-        <ul class='item-personal-details'>
-          <li>设计系统工作流，设计工作流界面和数据库表</li>
-          <li>独立负责华商银行的基金代销系统的所有新功能模块的开发，并顺利上线。</li>
-        </ul>
-      </div>
-      <div class='page-break'></div>
-    </section>
-    <section class='category education'>
-      <h2 class='category-title'>教育</h2>
-      <div class='item'>
-        <div class='target-border'>
-          <div class='target-dot'></div>
-        </div>
-        <div class='titles wrap'>
-          <h3 class='item-company-title'>本科教育经历</h3>
-          <span class='item-personal-title'>桂林电子科技大学</span>
-        </div>
-        <div class='item-date'>2012年9月 - 2016年7月</div>
-        <ul class='item-personal-details'>
-          <li>数字媒体技术专业</li>
-        </ul>
-      </div>
-    </section>
-    <section class='category community'>
-      <h2 class='category-title'>个人实践</h2>
-      <div class='item'>
-        <div class='target-border'>
-          <div class='target-dot'></div>
-        </div>
-        <div class='item-date'>2015年8月 - 至今</div>
-        <ul class='item-personal-details'>
-          <li>用AngularJs，Node.js，Express，Mogodb独立构建过小型网站</li>
-          <li>目前正在用Angular4，Webpack，Node.js，Express实现网易云音乐的web端</li>
-        </ul>
-      </div>
-    </section>
   </div>
-</body>
-<script>
-  $('nav .nav-open-btn').on('click', function(){
-    $('nav .nav-display').toggleClass('open');
-  })
-</script>
-<script>
-  (function (i, s, o, g, r, a, m) {
-    i['GoogleAnalyticsObject'] = r;
-    i[r] = i[r] || function () {
-      (i[r].q = i[r].q || []).push(arguments)
-    }, i[r].l = 1 * new Date();
-    a = s.createElement(o),
-      m = s.getElementsByTagName(o)[0];
-    a.async = 1;
-    a.src = g;
-    m.parentNode.insertBefore(a, m)
-  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-  ga('create', 'UA-45866381-1', 'lucybain.com');
-  ga('send', 'pageview');
-</script>
-
+    
+  </div>
+  
 </html>
