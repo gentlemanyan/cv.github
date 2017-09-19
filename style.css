@@ -1213,7 +1213,7 @@ code {
     }
 
     nav {
-        padding: 30px;
+        /* padding: 30px; */
         width: 100%
     }
 
@@ -1236,11 +1236,27 @@ code {
     }
 }
 
+.navbar {
+    display: flex;
+    border-bottom: none;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 20px
+}
+.navbar > li {
+    float: left;
+    font-size: 0.9em;
+    list-style: none;
+    margin-bottom: 0
+}
+.navbar:after {
+    display: table;
+    content: "";
+    clear: both;
+}
+
 .tab-active { 
     display: block;
-}
-.tab-panel {
-    min-height: 700px;
 }
 
 .personal-info > ul {
