@@ -1267,3 +1267,7 @@ code {
     color: #fff;
     list-style: none;
 }
+
+.tab-panel {
+    min-height: 690px;
+}
