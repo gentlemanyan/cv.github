@@ -1271,3 +1271,7 @@ code {
 .tab-panel {
     min-height: 690px;
 }
+
+.item > p {
+    word-break: break-all;
+}
